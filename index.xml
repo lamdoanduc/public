@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hi, I am Duc-Lam Doan on Duc-Lam Doan</title>
+    <link>https://lamdoanduc.github.io/public/</link>
+    <description>Recent content in Hi, I am Duc-Lam Doan on Duc-Lam Doan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Nov 2020 10:58:08 -0400</lastBuildDate><atom:link href="https://lamdoanduc.github.io/public/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Game-of-life simulation</title>
+      <link>https://lamdoanduc.github.io/public/hobbies/hb3/</link>
+      <pubDate>Mon, 09 Nov 2020 10:58:08 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/hobbies/hb3/</guid>
+      <description>Task:  Simulate cellular automaton of Game of life devised by John Conway in 70&amp;rsquo;s.  Rule: The game consists of two dimensional orthogonal grid of cells. Cells are in two possible states, alive or dead. Each cell interacts with its eight neighbours, and at each time step the following transitions occur:
+ Any live cell with fewer than two live neighbours dies, as if caused by underpopulation Any live cell with more than three live neighbours dies, as if by overcrowding Any live cell with two or three live neighbours lives on to the next generation Any dead cell with exactly three live neighbours becomes a live cell The initial pattern constitutes the seed of the system, and the system is left to evolve according to rules.</description>
+    </item>
+    
+    <item>
+      <title>Charged particles in magnetic fields</title>
+      <link>https://lamdoanduc.github.io/public/hobbies/hb2/</link>
+      <pubDate>Fri, 09 Oct 2020 10:58:08 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/hobbies/hb2/</guid>
+      <description>Task:  Analyse the motion of a charged particle by solving the differential equation numerically. The general motion of a charged particle in electric E and magnetic B fields is governed by: $$\vec{F}=\frac{q}{m}(\vec{E} + \vec{v}*\vec{B})$$ where q, m and v are the charge, mass and velocity of the particle and F is the force acting on it.  Initial conditions:  A toroidally symmetric magnetic field one has the B-field at any point being along a ring around z in the clockwise direction.</description>
+    </item>
+    
+    <item>
+      <title>Amazon&#39;s tiny profits</title>
+      <link>https://lamdoanduc.github.io/public/posts/post2/</link>
+      <pubDate>Wed, 09 Sep 2020 10:58:08 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/posts/post2/</guid>
+      <description>The visualisation shows the Amazon&amp;rsquo;s business model. The company is barely profitable. This is because it reinvests its profits rapidly into new innovative products. I made this for a #Makeover-Monday which is a weekly social data project. Click the link here for an interactive version of the plots.
+  </description>
+    </item>
+    
+    <item>
+      <title>Simulation of a driven pendulum</title>
+      <link>https://lamdoanduc.github.io/public/hobbies/hb1/</link>
+      <pubDate>Wed, 09 Sep 2020 10:58:08 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/hobbies/hb1/</guid>
+      <description>Task:  Simulate the driven pendulum using odeint in Scipy, Python Adjust driving force (frequency) to make the pendulum into period doubling, then becomes chaos  Approach:  Write functions of the motion Use odeint in Scipy to solve differential equations numerically Plotting angle versus time and angle versus angular velocity Make animations for intuitive demonstrations of the trajectories.    </description>
+    </item>
+    
+    <item>
+      <title>The 40-year history of music industry</title>
+      <link>https://lamdoanduc.github.io/public/posts/post1/</link>
+      <pubDate>Wed, 09 Sep 2020 10:58:08 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/posts/post1/</guid>
+      <description>This is a visualisation of the last 40-year history of music industry. I made this for a #Makeover-Monday which is a weekly social data project. The visualisation shows how the musics industry has changed in its revenue with different music format. The digital format prepares for an end of physical format. To interact with the plots, click here.
+  </description>
+    </item>
+    
+    <item>
+      <title>Project III: Precdict eCommerce price</title>
+      <link>https://lamdoanduc.github.io/public/portfolio/project3/</link>
+      <pubDate>Thu, 11 Jun 2020 11:13:32 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/portfolio/project3/</guid>
+      <description>Goal: The blooming of e-commerce platforms over the last 2 decades makes the market become very competitive. To dominate the market they must provide customer with goods at lower prices. This project uses the data from an e-commerce platform to predict the goods price based on given features in the data.
+Data: The data contains contains 2452 observations with 7 columns (features) and a target variable, Selling_price.
+  Method: The exploratory data analysis (EDA) showed a highly skewed distribution of the selling price.</description>
+    </item>
+    
+    <item>
+      <title>Project II: : Anomalies in data</title>
+      <link>https://lamdoanduc.github.io/public/portfolio/project2/</link>
+      <pubDate>Sun, 10 May 2020 11:00:59 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/portfolio/project2/</guid>
+      <description>Overview and Object: The data shows the business performance of an online shop in 2018. The shop manager has noticed anomalies in their ERP reports, and she is worried about the reliability of the data. The data consists of three dataset: CustomerData, ItemData, and TransactionData. The case-study goals are:
+(1) We need to understand the data and develop a comprehensive understanding of the information provided.
+(2) From this understanding we need to identify anomalies, consider important relationships, and report on any concern.</description>
+    </item>
+    
+    <item>
+      <title>Project I: Loan status prediction</title>
+      <link>https://lamdoanduc.github.io/public/portfolio/project1/</link>
+      <pubDate>Thu, 09 Apr 2020 10:58:08 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/portfolio/project1/</guid>
+      <description>Goal: A model can predict wether or not a borrower will pay back his/her loan. The model is trained with a given historical data that has information on whether or not the borrowers defaulted. The model can be used in the future to assess if a new customer is likely to pay back the loan.
+Method: A deep neural network is used to address the problem. Since the data is imbalanced, it will be resampled (both under-sampled and over-sampled) to get better results of prediction.</description>
+    </item>
+    
+    <item>
+      <title>Project IV: Investigating customer behavior on Google Merchandise Store website using the Google Analytics dataset</title>
+      <link>https://lamdoanduc.github.io/public/portfolio/project4/</link>
+      <pubDate>Wed, 12 Feb 2020 11:14:48 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/portfolio/project4/</guid>
+      <description>1. Goals: 1.1. Exploratory data analysis:  Number of views and number of unique users, Top ten products with the most views, Top top 10 selling products, Number of different eCommerceAction_type, Calculate revenue by month, How many % of the total visitors made a purchase, How many visitors bought on subsequent visits to the website?  1.2. Predictive analysis There were some customers who added products to carts but they removed the products from the carts or logged out without further processing.</description>
+    </item>
+    
+  </channel>
+</rss>

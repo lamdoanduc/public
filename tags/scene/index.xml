@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>scene on Duc-Lam Doan</title>
+    <link>https://lamdoanduc.github.io/public/tags/scene/</link>
+    <description>Recent content in scene on Duc-Lam Doan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 09 Sep 2020 10:58:08 -0400</lastBuildDate><atom:link href="https://lamdoanduc.github.io/public/tags/scene/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simulation of a driven pendulum</title>
+      <link>https://lamdoanduc.github.io/public/hobbies/hb1/</link>
+      <pubDate>Wed, 09 Sep 2020 10:58:08 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/hobbies/hb1/</guid>
+      <description>Task:  Simulate the driven pendulum using odeint in Scipy, Python Adjust driving force (frequency) to make the pendulum into period doubling, then becomes chaos  Approach:  Write functions of the motion Use odeint in Scipy to solve differential equations numerically Plotting angle versus time and angle versus angular velocity Make animations for intuitive demonstrations of the trajectories.    </description>
+    </item>
+    
+  </channel>
+</rss>

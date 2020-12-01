@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Duc-Lam Doan</title>
+    <link>https://lamdoanduc.github.io/public/posts/</link>
+    <description>Recent content in Posts on Duc-Lam Doan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 02 Aug 2020 12:00:00 -0500</lastBuildDate><atom:link href="https://lamdoanduc.github.io/public/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amazon&#39;s tiny profits</title>
+      <link>https://lamdoanduc.github.io/public/posts/post2/</link>
+      <pubDate>Wed, 09 Sep 2020 10:58:08 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/posts/post2/</guid>
+      <description>The visualisation shows the Amazon&amp;rsquo;s business model. The company is barely profitable. This is because it reinvests its profits rapidly into new innovative products. I made this for a #Makeover-Monday which is a weekly social data project. Click the link here for an interactive version of the plots.
+  </description>
+    </item>
+    
+    <item>
+      <title>The 40-year history of music industry</title>
+      <link>https://lamdoanduc.github.io/public/posts/post1/</link>
+      <pubDate>Wed, 09 Sep 2020 10:58:08 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/posts/post1/</guid>
+      <description>This is a visualisation of the last 40-year history of music industry. I made this for a #Makeover-Monday which is a weekly social data project. The visualisation shows how the musics industry has changed in its revenue with different music format. The digital format prepares for an end of physical format. To interact with the plots, click here.
+  </description>
+    </item>
+    
+  </channel>
+</rss>

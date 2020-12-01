@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hobbies on Duc-Lam Doan</title>
+    <link>https://lamdoanduc.github.io/public/hobbies/</link>
+    <description>Recent content in Hobbies on Duc-Lam Doan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 02 Aug 2020 12:00:00 -0500</lastBuildDate><atom:link href="https://lamdoanduc.github.io/public/hobbies/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Game-of-life simulation</title>
+      <link>https://lamdoanduc.github.io/public/hobbies/hb3/</link>
+      <pubDate>Mon, 09 Nov 2020 10:58:08 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/hobbies/hb3/</guid>
+      <description>Task:  Simulate cellular automaton of Game of life devised by John Conway in 70&amp;rsquo;s.  Rule: The game consists of two dimensional orthogonal grid of cells. Cells are in two possible states, alive or dead. Each cell interacts with its eight neighbours, and at each time step the following transitions occur:
+ Any live cell with fewer than two live neighbours dies, as if caused by underpopulation Any live cell with more than three live neighbours dies, as if by overcrowding Any live cell with two or three live neighbours lives on to the next generation Any dead cell with exactly three live neighbours becomes a live cell The initial pattern constitutes the seed of the system, and the system is left to evolve according to rules.</description>
+    </item>
+    
+    <item>
+      <title>Charged particles in magnetic fields</title>
+      <link>https://lamdoanduc.github.io/public/hobbies/hb2/</link>
+      <pubDate>Fri, 09 Oct 2020 10:58:08 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/hobbies/hb2/</guid>
+      <description>Task:  Analyse the motion of a charged particle by solving the differential equation numerically. The general motion of a charged particle in electric E and magnetic B fields is governed by: $$\vec{F}=\frac{q}{m}(\vec{E} + \vec{v}*\vec{B})$$ where q, m and v are the charge, mass and velocity of the particle and F is the force acting on it.  Initial conditions:  A toroidally symmetric magnetic field one has the B-field at any point being along a ring around z in the clockwise direction.</description>
+    </item>
+    
+    <item>
+      <title>Simulation of a driven pendulum</title>
+      <link>https://lamdoanduc.github.io/public/hobbies/hb1/</link>
+      <pubDate>Wed, 09 Sep 2020 10:58:08 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/hobbies/hb1/</guid>
+      <description>Task:  Simulate the driven pendulum using odeint in Scipy, Python Adjust driving force (frequency) to make the pendulum into period doubling, then becomes chaos  Approach:  Write functions of the motion Use odeint in Scipy to solve differential equations numerically Plotting angle versus time and angle versus angular velocity Make animations for intuitive demonstrations of the trajectories.    </description>
+    </item>
+    
+  </channel>
+</rss>
