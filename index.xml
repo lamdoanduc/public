@@ -56,7 +56,7 @@
     </item>
     
     <item>
-      <title>Project III: Precdict eCommerce price</title>
+      <title>Project III: Predict eCommerce price</title>
       <link>https://lamdoanduc.github.io/public/portfolio/project3/</link>
       <pubDate>Thu, 11 Jun 2020 11:13:32 -0400</pubDate>
       
@@ -72,7 +72,7 @@ Data: The data contains contains 2452 observations with 7 columns (features) and
       <pubDate>Sun, 10 May 2020 11:00:59 -0400</pubDate>
       
       <guid>https://lamdoanduc.github.io/public/portfolio/project2/</guid>
-      <description>Overview and Object: The data shows the business performance of an online shop in 2018. The shop manager has noticed anomalies in their ERP reports, and she is worried about the reliability of the data. The data consists of three dataset: CustomerData, ItemData, and TransactionData. The case-study goals are:
+      <description>Overview and Objective: The data shows the business performance of an online shop in 2018. The shop manager has noticed anomalies in their ERP reports, and she is worried about the reliability of the data. The data consists of three dataset: CustomerData, ItemData, and TransactionData. The case-study goals are:
 (1) We need to understand the data and develop a comprehensive understanding of the information provided.
 (2) From this understanding we need to identify anomalies, consider important relationships, and report on any concern.</description>
     </item>
