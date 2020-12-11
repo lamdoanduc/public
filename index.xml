@@ -88,6 +88,15 @@ Method: A deep neural network is used to address the problem. Since the data is 
     </item>
     
     <item>
+      <title>Project V: A Network intrusion detector</title>
+      <link>https://lamdoanduc.github.io/public/portfolio/project5/</link>
+      <pubDate>Thu, 09 Apr 2020 10:58:08 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/portfolio/project5/</guid>
+      <description>Task:  Build a predictive model capable of distinguishing between &amp;lsquo;bad&amp;rsquo; connections, called intrusions or attacks, and &amp;lsquo;good&amp;rsquo; normal connections. Differentiate between both the normal traffic and among distinct types of attack (predict the actual types (22 types) of attack).  Data:  The dataset was acquired, by Lincoln Labs, for nine weeks of raw TCP dump data for a local-area network (LAN) simulating a typical U.S. Air Force LAN. This Link is for more information about the data.</description>
+    </item>
+    
+    <item>
       <title>Project IV: Investigating customer behavior on Google Merchandise Store website using the Google Analytics dataset</title>
       <link>https://lamdoanduc.github.io/public/portfolio/project4/</link>
       <pubDate>Wed, 12 Feb 2020 11:14:48 -0400</pubDate>
