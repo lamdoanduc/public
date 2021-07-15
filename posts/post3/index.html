@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Student&#39;s t-distribution and Confidence intervals using t-score | Duc-Lam Doan</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="What is the T-distribution?   T-distribution is known as the Student distribution. T-distribution allows for use of small samples (n &lt; 30) with an unknown standard deviation of population, however it does so by sacrificing certainty with a margin-of-error trade-off. It also has a bell-shaped distribution as normal distribution and it converges into a normal distribution when sample size n is high.
+  Probability density function: $$ f(t) = \frac {\varGamma(\frac{v&#43;1}{2})}{\sqrt{v\pi}\varGamma(\frac{v}{2})} (1&#43;\frac{t^2}{v})^{-\frac{v&#43;1}{2}}$$ Where $$\varGamma$$ is the gamma function, and v = n-1 is the number of degrees of freedom.">
+    <meta name="generator" content="Hugo 0.78.2" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="https://lamdoanduc.github.io/public/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Student&#39;s t-distribution and Confidence intervals using t-score" />
+<meta property="og:description" content="What is the T-distribution?   T-distribution is known as the Student distribution. T-distribution allows for use of small samples (n &lt; 30) with an unknown standard deviation of population, however it does so by sacrificing certainty with a margin-of-error trade-off. It also has a bell-shaped distribution as normal distribution and it converges into a normal distribution when sample size n is high.
+  Probability density function: $$ f(t) = \frac {\varGamma(\frac{v&#43;1}{2})}{\sqrt{v\pi}\varGamma(\frac{v}{2})} (1&#43;\frac{t^2}{v})^{-\frac{v&#43;1}{2}}$$ Where $$\varGamma$$ is the gamma function, and v = n-1 is the number of degrees of freedom." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lamdoanduc.github.io/public/posts/post3/" />
+<meta property="article:published_time" content="2021-02-10T10:58:08-04:00" />
+<meta property="article:modified_time" content="2021-02-10T10:58:08-04:00" />
+<meta itemprop="name" content="Student&#39;s t-distribution and Confidence intervals using t-score">
+<meta itemprop="description" content="What is the T-distribution?   T-distribution is known as the Student distribution. T-distribution allows for use of small samples (n &lt; 30) with an unknown standard deviation of population, however it does so by sacrificing certainty with a margin-of-error trade-off. It also has a bell-shaped distribution as normal distribution and it converges into a normal distribution when sample size n is high.
+  Probability density function: $$ f(t) = \frac {\varGamma(\frac{v&#43;1}{2})}{\sqrt{v\pi}\varGamma(\frac{v}{2})} (1&#43;\frac{t^2}{v})^{-\frac{v&#43;1}{2}}$$ Where $$\varGamma$$ is the gamma function, and v = n-1 is the number of degrees of freedom.">
+<meta itemprop="datePublished" content="2021-02-10T10:58:08-04:00" />
+<meta itemprop="dateModified" content="2021-02-10T10:58:08-04:00" />
+<meta itemprop="wordCount" content="621">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Student&#39;s t-distribution and Confidence intervals using t-score"/>
+<meta name="twitter:description" content="What is the T-distribution?   T-distribution is known as the Student distribution. T-distribution allows for use of small samples (n &lt; 30) with an unknown standard deviation of population, however it does so by sacrificing certainty with a margin-of-error trade-off. It also has a bell-shaped distribution as normal distribution and it converges into a normal distribution when sample size n is high.
+  Probability density function: $$ f(t) = \frac {\varGamma(\frac{v&#43;1}{2})}{\sqrt{v\pi}\varGamma(\frac{v}{2})} (1&#43;\frac{t^2}{v})^{-\frac{v&#43;1}{2}}$$ Where $$\varGamma$$ is the gamma function, and v = n-1 is the number of degrees of freedom."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://lamdoanduc.github.io/public/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Duc-Lam Doan
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://lamdoanduc.github.io/public/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://lamdoanduc.github.io/public/portfolio/" title="Portfolio page">
+              Portfolio
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://lamdoanduc.github.io/public/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/duclam-doan/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/lamdoanduc" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+<a href="https://public.tableau.com/profile/duc.lam#!/" target="_blank" class="link-transition tableau link dib z-999 pt3 pt0-l mr1" title="Tableau link" rel="noopener" aria-label="Tableau——Opens in a new window">
+  <svg  height="32px"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.3 59.5"><path d="M28.5 40.2h3.3v-9h8.3V28h-8.3v-9h-3.3v9h-8.2v3.2h8.2z" fill="#e8762d"/><path d="M13.2 53.2H16v-8h7.4v-2.5H16v-8.1h-2.8v8.1H5.8v2.5h7.4z" fill="#c72037"/><path d="M44.3 24.3h2.8v-8h7.5v-2.4h-7.5V5.8h-2.8v8.1h-7.4v2.4h7.4z" fill="#5b879b"/><path d="M29 59.5h2.4v-5.7h5.1v-2.1h-5.1V46H29v5.7h-5v2.1h5z" fill="#5c6692"/><path d="M13.3 24.3h2.6v-8.1h7.5v-2.3h-7.5V5.8h-2.6v8.1H5.8v2.3h7.5z" fill="#eb9129"/><path d="M52.8 36.3h2.4v-5.6h5.1v-2.2h-5.1v-5.6h-2.4v5.6h-5v2.2h5z" fill="#5c6692"/><path clip-rule="evenodd" d="M44.3 53.2h2.8v-8h7.5v-2.5h-7.5v-8.1h-2.8v8.1h-7.4v2.5h7.4z" fill="#1f457e" fill-rule="evenodd"/><path d="M36.1 7.2V5.5h-5V0h-1.8v5.5h-5v1.7h5v5.5h1.8V7.2zM5 35.9h1.8v-5.5h5v-1.7h-5v-5.4H5v5.4H0v1.8l5-.1z" fill="#7199a6"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Student&#39;s t-distribution and Confidence intervals using t-score</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-02-10T10:58:08-04:00">February 10, 2021</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="what-is-the-t-distribution">What is the T-distribution?</h2>
+<ul>
+<li>
+<p>T-distribution is known as the Student distribution. T-distribution allows for use of small samples (<em>n</em> &lt; 30)  with an unknown standard deviation of population, however it does so by sacrificing certainty with a margin-of-error trade-off. It also has a bell-shaped distribution as normal distribution and it converges into a normal distribution when sample size  <em>n</em> is high.</p>
+</li>
+<li>
+<p>Probability density function:
+$$  f(t) = \frac {\varGamma(\frac{v+1}{2})}{\sqrt{v\pi}\varGamma(\frac{v}{2})} (1+\frac{t^2}{v})^{-\frac{v+1}{2}}$$
+Where $$\varGamma$$ is the gamma function,
+and <em>v = n-1</em> is the number of degrees of freedom.</p>
+</li>
+<li>
+<p>t-score is analogous to the z-score (in normal distribution), since we don&rsquo;t know the population standard deviation, so we need to use the sample standard deviation (SD):
+$$t=\frac{\overline{X}-\mu}{s/\sqrt{n}}$$
+where $$\overline{X}$$ is the sample mean and <em>s</em> is the sample SD. t-distribution also has a t-table for t-score, i.e., knowing the degree of freedom and the desired cumulative probability.</p>
+</li>
+<li>
+<p>t-test is commonly used for comparison between independent samples (while z-test is to compare a sample to the population).</p>
+</li>
+</ul>
+<h2 id="call-t-distribution--using-scipy">Call T-distribution  using Scipy?</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#Import the stats library</span>
+<span style="color:#f92672">from</span> scipy.stats <span style="color:#f92672">import</span> t
+<span style="color:#75715e"># Import matplotlib</span>
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+<span style="color:#f92672">%</span>matplotlib inline
+<span style="color:#75715e"># import numpy</span>
+<span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+<span style="color:#75715e"># Create x range</span>
+x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linspace(<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">1000</span>)
+<span style="color:#75715e"># Create the t distribution with scipy</span>
+rv5 <span style="color:#f92672">=</span> t(<span style="color:#ae81ff">5</span>)
+<span style="color:#75715e"># Plot the PDF versus the x range</span>
+fig <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">4</span>))
+plt<span style="color:#f92672">.</span>plot(x, rv5<span style="color:#f92672">.</span>pdf(x))
+plt<span style="color:#f92672">.</span>savefig(<span style="color:#e6db74">&#39;t_distribution-png&#39;</span>,dpi<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>)
+</code></pre></div><figure>
+    <img src="https://lamdoanduc.github.io/public/images/t_distribution.png"/> 
+</figure>
+
+<h2 id="confidence-intervals-using-t-score">Confidence intervals using t-score</h2>
+<ul>
+<li>Confidence interval is a range that the measured parameters are expected to fall into with certain confidence (percentage). We can only have the sample&rsquo;s parameter and you want to estimate a range for the corresponding parameter for the whole population. The lower and upper limits for the confidence intervals are:
+<ul>
+<li>UL = $\overline{X} $ + t-score * approx_stand_error</li>
+<li>LL = $\overline{X} $ - t-score * approx_stand_error</li>
+</ul>
+</li>
+<li>We consider an example of scores in an exam for ten students and try to estimate the mean score for the school students using t-score with 98% confidence. The sample has the mean:   $$\overline{X} = 120$$ and the sample standard deviation $$s = 29.51$$</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> scipy.stats <span style="color:#f92672">import</span> t
+X_bar <span style="color:#f92672">=</span> <span style="color:#ae81ff">126</span>
+n <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+s <span style="color:#f92672">=</span> <span style="color:#ae81ff">29.51</span>
+<span style="color:#75715e"># t-score for two-tailed</span>
+t_score <span style="color:#f92672">=</span>round(t<span style="color:#f92672">.</span>ppf(q<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-.</span><span style="color:#ae81ff">02</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>,df<span style="color:#f92672">=</span>n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),<span style="color:#ae81ff">2</span>)
+<span style="color:#75715e"># Calculate upper and lower limits</span>
+UL <span style="color:#f92672">=</span> X_bar <span style="color:#f92672">+</span> t_score <span style="color:#f92672">*</span> s<span style="color:#f92672">/</span>(n)<span style="color:#f92672">**</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)
+LL <span style="color:#f92672">=</span> X_bar <span style="color:#f92672">-</span> t_score <span style="color:#f92672">*</span> s<span style="color:#f92672">/</span>(n)<span style="color:#f92672">**</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;With 98</span><span style="color:#e6db74">% c</span><span style="color:#e6db74">onfidence, the mean score for all the school students is in between: {LL} and {UL} &#39;</span>)
+</code></pre></div><pre><code>With 98% confidence, the mean score for all the school students is in between: 99.68409452205758 and 152.3159054779424
+</code></pre>
+<h2 id="hypothesis-test">Hypothesis test</h2>
+<p>A study shows the average weight for schoolboys at ages of 14-15 years in an area is 150 lbs. To evaluate the study we take a sample of weights of 10 boys in the area. The sample mean is 155 lbs and a standard deviation of 12.6 lbs. We want to test the hypothesis (result from the study) with a significance level of 5%.</p>
+<h2 id="step-1">Step 1:</h2>
+<ul>
+<li>
+<p>Define the hypotheses:</p>
+<ul>
+<li>H_0: the population mean is equal 150, the average weight from study is correct.</li>
+<li>H_a: the population mean is NOT equal 150, the average weight from study is NOT correct.</li>
+</ul>
+</li>
+<li>
+<p>Significance level:</p>
+<ul>
+<li>5% Significance level (alpha = 0.025, two-tailed)</li>
+<li>if there is less than 5% chance of occurring, then we&rsquo;ll reject the null hypothesis, H_0.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> scipy.stats <span style="color:#f92672">import</span> t
+<span style="color:#75715e"># the sample mean, size, and standard deviation</span>
+X_b <span style="color:#f92672">=</span> <span style="color:#ae81ff">156</span>
+n <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+s <span style="color:#f92672">=</span> <span style="color:#ae81ff">12.5</span>
+<span style="color:#75715e"># the hypothesis mean</span>
+mu <span style="color:#f92672">=</span> <span style="color:#ae81ff">150</span>
+</code></pre></div><h2 id="step-2">Step 2:</h2>
+<p>Identify test statistic: t-statistic
+$$t_s = \frac{\overline{X} - \mu}{\frac{s}{\sqrt{n}}}$$</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">t_s <span style="color:#f92672">=</span> (X_b <span style="color:#f92672">-</span> mu) <span style="color:#f92672">/</span> ((s)<span style="color:#f92672">/</span>(n)<span style="color:#f92672">**</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>))
+t_s
+</code></pre></div><pre><code>1.5178932768808222
+</code></pre>
+<h2 id="step-3">Step 3:</h2>
+<p>Determine the p-value</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">p_value <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>t<span style="color:#f92672">.</span>cdf(abs(t_s), df<span style="color:#f92672">=</span>n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+p_value
+</code></pre></div><pre><code>0.08167716372263945
+</code></pre>
+<h2 id="step-4">Step 4:</h2>
+<p>Comparing p-value and the significance level (alpha = 0.02). Because the p_value is larger than alpha, we can <strong>NOT</strong> reject the null hypothesis.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          
+          
+          processEscapes: true,
+          processEnvironments: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+          TeX: { equationNumbers: { autoNumber: "AMS" },
+          extensions: ["AMSmath.js", "AMSsymbols.js"] }
+          },
+        CommonHTML: { linebreaks: { automatic: true } },
+        "HTML-CSS": { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+      });
+    </script>
+    <script type="text/javascript" async
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lamdoanduc.github.io/public/" >
+    &copy;  Duc-Lam Doan 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/duclam-doan/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/lamdoanduc" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+<a href="https://public.tableau.com/profile/duc.lam#!/" target="_blank" class="link-transition tableau link dib z-999 pt3 pt0-l mr1" title="Tableau link" rel="noopener" aria-label="Tableau——Opens in a new window">
+  <svg  height="32px"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.3 59.5"><path d="M28.5 40.2h3.3v-9h8.3V28h-8.3v-9h-3.3v9h-8.2v3.2h8.2z" fill="#e8762d"/><path d="M13.2 53.2H16v-8h7.4v-2.5H16v-8.1h-2.8v8.1H5.8v2.5h7.4z" fill="#c72037"/><path d="M44.3 24.3h2.8v-8h7.5v-2.4h-7.5V5.8h-2.8v8.1h-7.4v2.4h7.4z" fill="#5b879b"/><path d="M29 59.5h2.4v-5.7h5.1v-2.1h-5.1V46H29v5.7h-5v2.1h5z" fill="#5c6692"/><path d="M13.3 24.3h2.6v-8.1h7.5v-2.3h-7.5V5.8h-2.6v8.1H5.8v2.3h7.5z" fill="#eb9129"/><path d="M52.8 36.3h2.4v-5.6h5.1v-2.2h-5.1v-5.6h-2.4v5.6h-5v2.2h5z" fill="#5c6692"/><path clip-rule="evenodd" d="M44.3 53.2h2.8v-8h7.5v-2.5h-7.5v-8.1h-2.8v8.1h-7.4v2.5h7.4z" fill="#1f457e" fill-rule="evenodd"/><path d="M36.1 7.2V5.5h-5V0h-1.8v5.5h-5v1.7h5v5.5h1.8V7.2zM5 35.9h1.8v-5.5h5v-1.7h-5v-5.4H5v5.4H0v1.8l5-.1z" fill="#7199a6"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="https://lamdoanduc.github.io/public/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

@@ -8,6 +8,45 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 02 Aug 2020 12:00:00 -0500</lastBuildDate><atom:link href="https://lamdoanduc.github.io/public/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Chi-square distribution and hypothesis testing using Chi-statistic</title>
+      <link>https://lamdoanduc.github.io/public/posts/post6/</link>
+      <pubDate>Sat, 10 Apr 2021 10:58:08 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/posts/post6/</guid>
+      <description>1. What is Chi-square?  Assume that we observe an example of a categorical variable that has N different values, 1 through N. Each value has an expected (theoretical) frequency and an observed frequency. We can display them as the following table:      value 1 value 2 &amp;hellip; value N     Observed frequency O_1 O_2 &amp;hellip; O_N   expected frequency E_1 E_2 &amp;hellip; E_N     Chi-Square is the sum of the squared difference between the observed and expected frequency divided by the number of values of the variable: $$\chi^2 = \sum^{N}_{j=1} \frac{(O_j - E_j)^2}{E_j}$$  2.</description>
+    </item>
+    
+    <item>
+      <title>Comparing two populations using hypothesis testing</title>
+      <link>https://lamdoanduc.github.io/public/posts/post5/</link>
+      <pubDate>Wed, 10 Mar 2021 10:58:08 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/posts/post5/</guid>
+      <description>Problem 1 (proportions)  A study shows the effect of a new drug on the treatment of a disease in two groups of patients: the first group received the drug and the other received placebo (no drug). The table below is the results:      n_patients n_cured proportion     new drug 250 150 0.60   placebo 245 118 0.48      We want to test if the new drug has a positive effect on the treatment or the result just happens by chance.</description>
+    </item>
+    
+    <item>
+      <title>Student&#39;s t-distribution and Confidence intervals using t-score</title>
+      <link>https://lamdoanduc.github.io/public/posts/post3/</link>
+      <pubDate>Wed, 10 Feb 2021 10:58:08 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/posts/post3/</guid>
+      <description>What is the T-distribution?   T-distribution is known as the Student distribution. T-distribution allows for use of small samples (n &amp;lt; 30) with an unknown standard deviation of population, however it does so by sacrificing certainty with a margin-of-error trade-off. It also has a bell-shaped distribution as normal distribution and it converges into a normal distribution when sample size n is high.
+  Probability density function: $$ f(t) = \frac {\varGamma(\frac{v+1}{2})}{\sqrt{v\pi}\varGamma(\frac{v}{2})} (1+\frac{t^2}{v})^{-\frac{v+1}{2}}$$ Where $$\varGamma$$ is the gamma function, and v = n-1 is the number of degrees of freedom.</description>
+    </item>
+    
+    <item>
+      <title>Hypothesis test using z-test (normal distribution)</title>
+      <link>https://lamdoanduc.github.io/public/posts/post4/</link>
+      <pubDate>Sun, 10 Jan 2021 10:58:08 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/posts/post4/</guid>
+      <description>Problem 1 (proportions) Before an election, a candidate performed a poll to see how many percentages of voters plan on voting for him. The poll asked 500 people, the result shows that there is 54% of eligible voters gonna vote for him. He wants to do a hypothesis test to see if he&amp;rsquo;s gonna have an opportunity to win the election.
+Approach Use one-tailed hypothesis test (Z test)
+Step 1:   Define the hypotheses:</description>
+    </item>
+    
+    <item>
       <title>Amazon&#39;s tiny profits</title>
       <link>https://lamdoanduc.github.io/public/posts/post2/</link>
       <pubDate>Wed, 09 Sep 2020 10:58:08 -0400</pubDate>

@@ -6,24 +6,44 @@
     <description>Recent content in Hi, I am Duc-Lam Doan on Duc-Lam Doan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Nov 2020 10:58:08 -0400</lastBuildDate><atom:link href="https://lamdoanduc.github.io/public/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Apr 2021 10:58:08 -0400</lastBuildDate><atom:link href="https://lamdoanduc.github.io/public/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Game-of-life simulation</title>
-      <link>https://lamdoanduc.github.io/public/hobbies/hb3/</link>
-      <pubDate>Mon, 09 Nov 2020 10:58:08 -0400</pubDate>
+      <title>Chi-square distribution and hypothesis testing using Chi-statistic</title>
+      <link>https://lamdoanduc.github.io/public/posts/post6/</link>
+      <pubDate>Sat, 10 Apr 2021 10:58:08 -0400</pubDate>
       
-      <guid>https://lamdoanduc.github.io/public/hobbies/hb3/</guid>
-      <description>Task:  Simulate cellular automaton of Game of life devised by John Conway in 70&amp;rsquo;s.  Rule: The game consists of two dimensional orthogonal grid of cells. Cells are in two possible states, alive or dead. Each cell interacts with its eight neighbours, and at each time step the following transitions occur:
- Any live cell with fewer than two live neighbours dies, as if caused by underpopulation Any live cell with more than three live neighbours dies, as if by overcrowding Any live cell with two or three live neighbours lives on to the next generation Any dead cell with exactly three live neighbours becomes a live cell The initial pattern constitutes the seed of the system, and the system is left to evolve according to rules.</description>
+      <guid>https://lamdoanduc.github.io/public/posts/post6/</guid>
+      <description>1. What is Chi-square?  Assume that we observe an example of a categorical variable that has N different values, 1 through N. Each value has an expected (theoretical) frequency and an observed frequency. We can display them as the following table:      value 1 value 2 &amp;hellip; value N     Observed frequency O_1 O_2 &amp;hellip; O_N   expected frequency E_1 E_2 &amp;hellip; E_N     Chi-Square is the sum of the squared difference between the observed and expected frequency divided by the number of values of the variable: $$\chi^2 = \sum^{N}_{j=1} \frac{(O_j - E_j)^2}{E_j}$$  2.</description>
     </item>
     
     <item>
-      <title>Charged particles in magnetic fields</title>
-      <link>https://lamdoanduc.github.io/public/hobbies/hb2/</link>
-      <pubDate>Fri, 09 Oct 2020 10:58:08 -0400</pubDate>
+      <title>Comparing two populations using hypothesis testing</title>
+      <link>https://lamdoanduc.github.io/public/posts/post5/</link>
+      <pubDate>Wed, 10 Mar 2021 10:58:08 -0400</pubDate>
       
-      <guid>https://lamdoanduc.github.io/public/hobbies/hb2/</guid>
-      <description>Task:  Analyse the motion of a charged particle by solving the differential equation numerically. The general motion of a charged particle in electric E and magnetic B fields is governed by: $$\vec{F}=\frac{q}{m}(\vec{E} + \vec{v}*\vec{B})$$ where q, m and v are the charge, mass and velocity of the particle and F is the force acting on it.  Initial conditions:  A toroidally symmetric magnetic field one has the B-field at any point being along a ring around z in the clockwise direction.</description>
+      <guid>https://lamdoanduc.github.io/public/posts/post5/</guid>
+      <description>Problem 1 (proportions)  A study shows the effect of a new drug on the treatment of a disease in two groups of patients: the first group received the drug and the other received placebo (no drug). The table below is the results:      n_patients n_cured proportion     new drug 250 150 0.60   placebo 245 118 0.48      We want to test if the new drug has a positive effect on the treatment or the result just happens by chance.</description>
+    </item>
+    
+    <item>
+      <title>Student&#39;s t-distribution and Confidence intervals using t-score</title>
+      <link>https://lamdoanduc.github.io/public/posts/post3/</link>
+      <pubDate>Wed, 10 Feb 2021 10:58:08 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/posts/post3/</guid>
+      <description>What is the T-distribution?   T-distribution is known as the Student distribution. T-distribution allows for use of small samples (n &amp;lt; 30) with an unknown standard deviation of population, however it does so by sacrificing certainty with a margin-of-error trade-off. It also has a bell-shaped distribution as normal distribution and it converges into a normal distribution when sample size n is high.
+  Probability density function: $$ f(t) = \frac {\varGamma(\frac{v+1}{2})}{\sqrt{v\pi}\varGamma(\frac{v}{2})} (1+\frac{t^2}{v})^{-\frac{v+1}{2}}$$ Where $$\varGamma$$ is the gamma function, and v = n-1 is the number of degrees of freedom.</description>
+    </item>
+    
+    <item>
+      <title>Hypothesis test using z-test (normal distribution)</title>
+      <link>https://lamdoanduc.github.io/public/posts/post4/</link>
+      <pubDate>Sun, 10 Jan 2021 10:58:08 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/posts/post4/</guid>
+      <description>Problem 1 (proportions) Before an election, a candidate performed a poll to see how many percentages of voters plan on voting for him. The poll asked 500 people, the result shows that there is 54% of eligible voters gonna vote for him. He wants to do a hypothesis test to see if he&amp;rsquo;s gonna have an opportunity to win the election.
+Approach Use one-tailed hypothesis test (Z test)
+Step 1:   Define the hypotheses:</description>
     </item>
     
     <item>
@@ -34,15 +54,6 @@
       <guid>https://lamdoanduc.github.io/public/posts/post2/</guid>
       <description>The visualisation shows the Amazon&amp;rsquo;s business model. The company is barely profitable. This is because it reinvests its profits rapidly into new innovative products. I made this for a #Makeover-Monday which is a weekly social data project. Click the link here for an interactive version of the plots.
   </description>
-    </item>
-    
-    <item>
-      <title>Simulation of a driven pendulum</title>
-      <link>https://lamdoanduc.github.io/public/hobbies/hb1/</link>
-      <pubDate>Wed, 09 Sep 2020 10:58:08 -0400</pubDate>
-      
-      <guid>https://lamdoanduc.github.io/public/hobbies/hb1/</guid>
-      <description>Task:  Simulate the driven pendulum using odeint in Scipy, Python Adjust driving force (frequency) to make the pendulum into period doubling, then becomes chaos  Approach:  Write functions of the motion Use odeint in Scipy to solve differential equations numerically Plotting angle versus time and angle versus angular velocity Make animations for intuitive demonstrations of the trajectories.    </description>
     </item>
     
     <item>
