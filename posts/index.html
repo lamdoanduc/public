@@ -158,12 +158,29 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="https://lamdoanduc.github.io/public/posts/post7/" class="link black dim">
+        Analysis of variance - ANOVA
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      This is a brief introduction about Analysis of variance as known as ANOVA. We will go through the concept of ANOVA, its assumptions, and how to perform a simple hypothesis testing using f-statistic in Python.
+ What is ANOVA? ANOVA is to test for a difference overall between populations (groups). The test will help to answer the question that if there is at least one group is different from the others, however, we can not tell exactly, which group is the group.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="https://lamdoanduc.github.io/public/posts/post6/" class="link black dim">
         Chi-square distribution and hypothesis testing using Chi-statistic
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      1. What is Chi-square?  Assume that we observe an example of a categorical variable that has N different values, 1 through N. Each value has an expected (theoretical) frequency and an observed frequency. We can display them as the following table:      value 1 value 2 &hellip; value N     Observed frequency O_1 O_2 &hellip; O_N   expected frequency E_1 E_2 &hellip; E_N     Chi-Square is the sum of the squared difference between the observed and expected frequency divided by the number of values of the variable: $$\chi^2 = \sum^{N}_{j=1} \frac{(O_j - E_j)^2}{E_j}$$  2.
+      This post is to describe Chi-square distribution and its applications in goodness-of-fit test and hypotheis testing.
+1. What is Chi-square?  Assume that we observe an example of a categorical variable that has N different values, 1 through N. Each value has an expected (theoretical) frequency and an observed frequency. We can display them as the following table:      value 1 value 2 &hellip; value N     Observed frequency O_1 O_2 &hellip; O_N   expected frequency E_1 E_2 &hellip; E_N     Chi-Square is the sum of the squared difference between the observed and expected frequency divided by the number of values of the variable: $$\chi^2 = \sum^{N}_{j=1} \frac{(O_j - E_j)^2}{E_j}$$  2.
     </div>
   </div>
 </div>
@@ -178,7 +195,8 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Problem 1 (proportions)  A study shows the effect of a new drug on the treatment of a disease in two groups of patients: the first group received the drug and the other received placebo (no drug). The table below is the results:      n_patients n_cured proportion     new drug 250 150 0.60   placebo 245 118 0.48      We want to test if the new drug has a positive effect on the treatment or the result just happens by chance.
+      We will go through two examples where we use hypothesis testing to compare two populations; one example for sample proportions and the other for sample means.
+Problem 1 (proportions)  A study shows the effect of a new drug on the treatment of a disease in two groups of patients: the first group received the drug and the other received placebo (no drug). The table below is the results:      n_patients n_cured proportion     new drug 250 150 0.
     </div>
   </div>
 </div>
@@ -193,8 +211,8 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      What is the T-distribution?   T-distribution is known as the Student distribution. T-distribution allows for use of small samples (n &lt; 30) with an unknown standard deviation of population, however it does so by sacrificing certainty with a margin-of-error trade-off. It also has a bell-shaped distribution as normal distribution and it converges into a normal distribution when sample size n is high.
-  Probability density function: $$ f(t) = \frac {\varGamma(\frac{v+1}{2})}{\sqrt{v\pi}\varGamma(\frac{v}{2})} (1+\frac{t^2}{v})^{-\frac{v+1}{2}}$$ Where $$\varGamma$$ is the gamma function, and v = n-1 is the number of degrees of freedom.
+      This post is dedicated to describe T-distribution and how to use it for confidence intervals calculation, as well as hypothesis testing.
+What is the T-distribution?   T-distribution is known as the Student distribution. T-distribution allows for use of small samples (n &lt; 30) with an unknown standard deviation of population, however it does so by sacrificing certainty with a margin-of-error trade-off. It also has a bell-shaped distribution as normal distribution and it converges into a normal distribution when sample size n is high.
     </div>
   </div>
 </div>

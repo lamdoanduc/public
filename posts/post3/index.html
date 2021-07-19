@@ -6,8 +6,8 @@
     
     <title>Student&#39;s t-distribution and Confidence intervals using t-score | Duc-Lam Doan</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="What is the T-distribution?   T-distribution is known as the Student distribution. T-distribution allows for use of small samples (n &lt; 30) with an unknown standard deviation of population, however it does so by sacrificing certainty with a margin-of-error trade-off. It also has a bell-shaped distribution as normal distribution and it converges into a normal distribution when sample size n is high.
-  Probability density function: $$ f(t) = \frac {\varGamma(\frac{v&#43;1}{2})}{\sqrt{v\pi}\varGamma(\frac{v}{2})} (1&#43;\frac{t^2}{v})^{-\frac{v&#43;1}{2}}$$ Where $$\varGamma$$ is the gamma function, and v = n-1 is the number of degrees of freedom.">
+    <meta name="description" content="This post is dedicated to describe T-distribution and how to use it for confidence intervals calculation, as well as hypothesis testing.
+What is the T-distribution?   T-distribution is known as the Student distribution. T-distribution allows for use of small samples (n &lt; 30) with an unknown standard deviation of population, however it does so by sacrificing certainty with a margin-of-error trade-off. It also has a bell-shaped distribution as normal distribution and it converges into a normal distribution when sample size n is high.">
     <meta name="generator" content="Hugo 0.78.2" />
     
     
@@ -29,26 +29,26 @@
     
     
     <meta property="og:title" content="Student&#39;s t-distribution and Confidence intervals using t-score" />
-<meta property="og:description" content="What is the T-distribution?   T-distribution is known as the Student distribution. T-distribution allows for use of small samples (n &lt; 30) with an unknown standard deviation of population, however it does so by sacrificing certainty with a margin-of-error trade-off. It also has a bell-shaped distribution as normal distribution and it converges into a normal distribution when sample size n is high.
-  Probability density function: $$ f(t) = \frac {\varGamma(\frac{v&#43;1}{2})}{\sqrt{v\pi}\varGamma(\frac{v}{2})} (1&#43;\frac{t^2}{v})^{-\frac{v&#43;1}{2}}$$ Where $$\varGamma$$ is the gamma function, and v = n-1 is the number of degrees of freedom." />
+<meta property="og:description" content="This post is dedicated to describe T-distribution and how to use it for confidence intervals calculation, as well as hypothesis testing.
+What is the T-distribution?   T-distribution is known as the Student distribution. T-distribution allows for use of small samples (n &lt; 30) with an unknown standard deviation of population, however it does so by sacrificing certainty with a margin-of-error trade-off. It also has a bell-shaped distribution as normal distribution and it converges into a normal distribution when sample size n is high." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://lamdoanduc.github.io/public/posts/post3/" />
 <meta property="article:published_time" content="2021-02-10T10:58:08-04:00" />
 <meta property="article:modified_time" content="2021-02-10T10:58:08-04:00" />
 <meta itemprop="name" content="Student&#39;s t-distribution and Confidence intervals using t-score">
-<meta itemprop="description" content="What is the T-distribution?   T-distribution is known as the Student distribution. T-distribution allows for use of small samples (n &lt; 30) with an unknown standard deviation of population, however it does so by sacrificing certainty with a margin-of-error trade-off. It also has a bell-shaped distribution as normal distribution and it converges into a normal distribution when sample size n is high.
-  Probability density function: $$ f(t) = \frac {\varGamma(\frac{v&#43;1}{2})}{\sqrt{v\pi}\varGamma(\frac{v}{2})} (1&#43;\frac{t^2}{v})^{-\frac{v&#43;1}{2}}$$ Where $$\varGamma$$ is the gamma function, and v = n-1 is the number of degrees of freedom.">
+<meta itemprop="description" content="This post is dedicated to describe T-distribution and how to use it for confidence intervals calculation, as well as hypothesis testing.
+What is the T-distribution?   T-distribution is known as the Student distribution. T-distribution allows for use of small samples (n &lt; 30) with an unknown standard deviation of population, however it does so by sacrificing certainty with a margin-of-error trade-off. It also has a bell-shaped distribution as normal distribution and it converges into a normal distribution when sample size n is high.">
 <meta itemprop="datePublished" content="2021-02-10T10:58:08-04:00" />
 <meta itemprop="dateModified" content="2021-02-10T10:58:08-04:00" />
-<meta itemprop="wordCount" content="621">
+<meta itemprop="wordCount" content="642">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Student&#39;s t-distribution and Confidence intervals using t-score"/>
-<meta name="twitter:description" content="What is the T-distribution?   T-distribution is known as the Student distribution. T-distribution allows for use of small samples (n &lt; 30) with an unknown standard deviation of population, however it does so by sacrificing certainty with a margin-of-error trade-off. It also has a bell-shaped distribution as normal distribution and it converges into a normal distribution when sample size n is high.
-  Probability density function: $$ f(t) = \frac {\varGamma(\frac{v&#43;1}{2})}{\sqrt{v\pi}\varGamma(\frac{v}{2})} (1&#43;\frac{t^2}{v})^{-\frac{v&#43;1}{2}}$$ Where $$\varGamma$$ is the gamma function, and v = n-1 is the number of degrees of freedom."/>
+<meta name="twitter:description" content="This post is dedicated to describe T-distribution and how to use it for confidence intervals calculation, as well as hypothesis testing.
+What is the T-distribution?   T-distribution is known as the Student distribution. T-distribution allows for use of small samples (n &lt; 30) with an unknown standard deviation of population, however it does so by sacrificing certainty with a margin-of-error trade-off. It also has a bell-shaped distribution as normal distribution and it converges into a normal distribution when sample size n is high."/>
 
 	
   </head>
@@ -176,7 +176,8 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="what-is-the-t-distribution">What is the T-distribution?</h2>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><em>This post is dedicated to describe T-distribution and how to use it for confidence intervals calculation, as well as hypothesis testing.</em></p>
+<h2 id="what-is-the-t-distribution">What is the T-distribution?</h2>
 <ul>
 <li>
 <p>T-distribution is known as the Student distribution. T-distribution allows for use of small samples (<em>n</em> &lt; 30)  with an unknown standard deviation of population, however it does so by sacrificing certainty with a margin-of-error trade-off. It also has a bell-shaped distribution as normal distribution and it converges into a normal distribution when sample size  <em>n</em> is high.</p>

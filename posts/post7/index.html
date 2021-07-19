@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Analysis of variance - ANOVA | Duc-Lam Doan</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="This is a brief introduction about Analysis of variance as known as ANOVA. We will go through the concept of ANOVA, its assumptions, and how to perform a simple hypothesis testing using f-statistic in Python.
+ What is ANOVA? ANOVA is to test for a difference overall between populations (groups). The test will help to answer the question that if there is at least one group is different from the others, however, we can not tell exactly, which group is the group.">
+    <meta name="generator" content="Hugo 0.78.2" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="https://lamdoanduc.github.io/public/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Analysis of variance - ANOVA" />
+<meta property="og:description" content="This is a brief introduction about Analysis of variance as known as ANOVA. We will go through the concept of ANOVA, its assumptions, and how to perform a simple hypothesis testing using f-statistic in Python.
+ What is ANOVA? ANOVA is to test for a difference overall between populations (groups). The test will help to answer the question that if there is at least one group is different from the others, however, we can not tell exactly, which group is the group." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lamdoanduc.github.io/public/posts/post7/" />
+<meta property="article:published_time" content="2021-05-10T10:58:08-04:00" />
+<meta property="article:modified_time" content="2021-05-10T10:58:08-04:00" />
+<meta itemprop="name" content="Analysis of variance - ANOVA">
+<meta itemprop="description" content="This is a brief introduction about Analysis of variance as known as ANOVA. We will go through the concept of ANOVA, its assumptions, and how to perform a simple hypothesis testing using f-statistic in Python.
+ What is ANOVA? ANOVA is to test for a difference overall between populations (groups). The test will help to answer the question that if there is at least one group is different from the others, however, we can not tell exactly, which group is the group.">
+<meta itemprop="datePublished" content="2021-05-10T10:58:08-04:00" />
+<meta itemprop="dateModified" content="2021-05-10T10:58:08-04:00" />
+<meta itemprop="wordCount" content="862">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Analysis of variance - ANOVA"/>
+<meta name="twitter:description" content="This is a brief introduction about Analysis of variance as known as ANOVA. We will go through the concept of ANOVA, its assumptions, and how to perform a simple hypothesis testing using f-statistic in Python.
+ What is ANOVA? ANOVA is to test for a difference overall between populations (groups). The test will help to answer the question that if there is at least one group is different from the others, however, we can not tell exactly, which group is the group."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://lamdoanduc.github.io/public/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Duc-Lam Doan
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://lamdoanduc.github.io/public/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://lamdoanduc.github.io/public/portfolio/" title="Portfolio page">
+              Portfolio
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://lamdoanduc.github.io/public/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/duclam-doan/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/lamdoanduc" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+<a href="https://public.tableau.com/profile/duc.lam#!/" target="_blank" class="link-transition tableau link dib z-999 pt3 pt0-l mr1" title="Tableau link" rel="noopener" aria-label="Tableau——Opens in a new window">
+  <svg  height="32px"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.3 59.5"><path d="M28.5 40.2h3.3v-9h8.3V28h-8.3v-9h-3.3v9h-8.2v3.2h8.2z" fill="#e8762d"/><path d="M13.2 53.2H16v-8h7.4v-2.5H16v-8.1h-2.8v8.1H5.8v2.5h7.4z" fill="#c72037"/><path d="M44.3 24.3h2.8v-8h7.5v-2.4h-7.5V5.8h-2.8v8.1h-7.4v2.4h7.4z" fill="#5b879b"/><path d="M29 59.5h2.4v-5.7h5.1v-2.1h-5.1V46H29v5.7h-5v2.1h5z" fill="#5c6692"/><path d="M13.3 24.3h2.6v-8.1h7.5v-2.3h-7.5V5.8h-2.6v8.1H5.8v2.3h7.5z" fill="#eb9129"/><path d="M52.8 36.3h2.4v-5.6h5.1v-2.2h-5.1v-5.6h-2.4v5.6h-5v2.2h5z" fill="#5c6692"/><path clip-rule="evenodd" d="M44.3 53.2h2.8v-8h7.5v-2.5h-7.5v-8.1h-2.8v8.1h-7.4v2.5h7.4z" fill="#1f457e" fill-rule="evenodd"/><path d="M36.1 7.2V5.5h-5V0h-1.8v5.5h-5v1.7h5v5.5h1.8V7.2zM5 35.9h1.8v-5.5h5v-1.7h-5v-5.4H5v5.4H0v1.8l5-.1z" fill="#7199a6"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Analysis of variance - ANOVA</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-05-10T10:58:08-04:00">May 10, 2021</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><em>This is a brief introduction about Analysis of variance as known as ANOVA. We will go through the concept of ANOVA, its assumptions, and how to perform a simple hypothesis testing using f-statistic in Python.</em></p>
+<ul>
+<li><strong>What is ANOVA</strong>?  ANOVA is to test for a difference overall between populations (groups). The test will help to answer the question that if there is at least one group is different from the others, however, we can not tell exactly, which group is the group.</li>
+<li>ANOVA relies on the following assumptions:
+<ul>
+<li>Each population in the comparison is normally distributed (can be checked by using Q-Q plot).</li>
+<li>The observations are independent one another (randomly selected, without replacement).</li>
+<li>Each of population has equivalent variance (standard deviations are proximately equivalent).</li>
+</ul>
+</li>
+<li>There are several types of ANOVA:
+<ul>
+<li>One-way ANOVA for comparing the means from different levels of one factor.</li>
+<li>Randomized block ANOVS allows us to see if other factors influencing the outcome.</li>
+<li>Two-way ANOVA as One-way ANOVA but here it uses two factors. It allows us to see the intersection between the factors.</li>
+</ul>
+</li>
+</ul>
+<h2 id="study-one-way-anova-through-an-example">Study One-way ANOVA through an example</h2>
+<ul>
+<li>Customers of a service providing company were asked to score the customer services of four different departments of the company. They gave scores from 1 (worst service) to 5 (excellent service). Here are the results from 4 customers:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Department 1</th>
+<th style="text-align:center">Department 2</th>
+<th style="text-align:center">Department 3</th>
+<th style="text-align:center">Department 4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">6</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">8</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">2</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Let call the means of scores of each level (department in our example) is: <em>m_1</em>, <em>m_2</em>, and <em>m_k</em> (<em>k</em> is the numbers of departments in our example) and the grand mean, <em>m_g</em> is defined as the mean of the level means:
+$$m_g = \frac{m_1 + m_2 + &hellip; + m_k}{k} = \sum^{k}_{j=1} \frac{m_j}{k} $$</li>
+<li><strong>The total sum of square (SST)</strong>, is the total variance of each data point and the the grand mean:</li>
+</ul>
+<p>$$ SST= \sum_j^k \sum_{i=1}^n (x_{ij} - m_g)^2 $$</p>
+<p>where <em>x_ij</em> is the data at level j and row i, <em>n</em> is the number of rows (or the number of customers, 4, in our example).</p>
+<ul>
+<li><strong>The variance within (SSW)</strong>, is the variance between the data values and individual mean in each level (department in our example):<br>
+$$SSW = \sum_{j=1}^{k} \sum_{i=1}^{n} (x_{ij} - m_j)^2 $$</li>
+<li><strong>The variance between (SSB)</strong>, is the variance between the mean for each company and the grand mean.
+$$SSB = \sum^{k}_{j=1} (m_j - m_g)^2 \times n $$</li>
+<li><em>Note</em>:
+$$SST = SSW + SSB$$</li>
+</ul>
+<h2 id="hypothesis-test-using-f-statistic">Hypothesis test using f-statistic</h2>
+<ul>
+<li>
+<p>The simple way to compare the quality of customer services between the departments is to compare the score means, however, we are not sure if the result does not happen by chance.</p>
+</li>
+<li>
+<p>The question from the example is if any of department provide better service than the others do or results from data just happen by chance (or their services are equally good).</p>
+</li>
+<li>
+<p>Approach: We&rsquo;re going to use f-statistic for the hypothesis testing</p>
+</li>
+<li>
+<p><strong>Define hypotheses</strong>:</p>
+<ul>
+<li>H_0: null hypothesis: The population means are equal. The customer services of the departments are equally good</li>
+<li>H_a: alternative hypothesis: The population means are NOT equal. Customer service of a department might be worse than the ones of others.</li>
+</ul>
+</li>
+<li>
+<p><strong>Identify test statistic: f-statistic</strong>:
+It is the ratio <em>between</em> the variance between the populations <em>and</em> the variance within each population.
+$$f_{statistic} = \frac{\frac{SSB}{k-1}}{\frac{SSW}{N-k}}$$
+where *N* is the total number of data points. If f-statistic is large that means there is a big difference between the populations and vice verses.</p>
+</li>
+<li>
+<p><strong>Compare the f-statistic with the critical value</strong>:</p>
+<ul>
+<li>We need to chose a significance level of, for example, 5% and get the critical value.</li>
+<li>Then compare f-statistic with the critical value, if f-statistic is larger than the critical value, we can REJECT the null hypothesis.</li>
+</ul>
+</li>
+</ul>
+<h2 id="implement-in-python">Implement in Python</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
+<span style="color:#f92672">import</span> scipy.stats <span style="color:#f92672">as</span> stats
+data <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">4</span>],
+        [<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">6</span>],
+        [<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">8</span>],
+        [<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">2</span>]       
+       ]
+data <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(data, columns <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;dept_1&#39;</span>,<span style="color:#e6db74">&#39;dept_2&#39;</span>,<span style="color:#e6db74">&#39;dept_3&#39;</span>,<span style="color:#e6db74">&#39;dept_4&#39;</span>])
+</code></pre></div><h4 id="code-from-scratch">Code from scratch</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#number of group</span>
+k <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>]
+<span style="color:#75715e">#number of observations (number of data values)</span>
+N <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> data<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>]
+<span style="color:#75715e"># grand mean</span>
+m_g <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>mean()<span style="color:#f92672">.</span>mean()
+<span style="color:#75715e"># The variance within (SSW)</span>
+SSW <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">for</span> dept <span style="color:#f92672">in</span> data<span style="color:#f92672">.</span>columns:
+    SSW <span style="color:#f92672">=</span> SSW <span style="color:#f92672">+</span> sum((data[dept] <span style="color:#f92672">-</span> data[dept]<span style="color:#f92672">.</span>mean())<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)
+<span style="color:#75715e"># The variance between (SSB)</span>
+SSB <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">for</span> dept <span style="color:#f92672">in</span> data<span style="color:#f92672">.</span>columns:
+    SSB <span style="color:#f92672">=</span> SSB <span style="color:#f92672">+</span> (data[dept]<span style="color:#f92672">.</span>mean()<span style="color:#f92672">-</span>m_g)<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> len(data)
+<span style="color:#75715e"># Identify test statistic: f-statistic</span>
+f_statistic <span style="color:#f92672">=</span> (SSB <span style="color:#f92672">/</span> (k<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)) <span style="color:#f92672">/</span> (SSW <span style="color:#f92672">/</span> (N<span style="color:#f92672">-</span>k))
+
+<span style="color:#75715e"># Get the critical value for 5% of significian level (alpha = 0.05)</span>
+alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.05</span>
+critical_value <span style="color:#f92672">=</span> stats<span style="color:#f92672">.</span>f<span style="color:#f92672">.</span>ppf(<span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>alpha, k<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, N<span style="color:#f92672">-</span>k)
+<span style="color:#75715e"># Conclusion</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;The f-statistic = </span><span style="color:#e6db74">%.2f</span><span style="color:#e6db74">, the critical value = </span><span style="color:#e6db74">%.2f</span><span style="color:#e6db74">.&#34;</span> <span style="color:#f92672">%</span> (f_statistic,critical_value))
+<span style="color:#66d9ef">if</span> f_statistic <span style="color:#f92672">&lt;</span> critical_value:
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Fail to reject the null hypothesis.&#34;</span>)
+<span style="color:#66d9ef">else</span>:
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Reject the null hypothesis.&#34;</span>)
+</code></pre></div><pre><code>The f-statistic = 0.73, the critical value = 3.49.
+Fail to reject the null hypothesis.
+</code></pre>
+<h4 id="use-f_oneway-function-in-scipystats">Use f_oneway function in scipy.stats</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># import the package</span>
+<span style="color:#f92672">from</span> scipy.stats <span style="color:#f92672">import</span> f_oneway
+<span style="color:#75715e"># get the f_statistic and p-value</span>
+f_statistic, p <span style="color:#f92672">=</span> f_oneway(data[<span style="color:#e6db74">&#39;dept_1&#39;</span>],data[<span style="color:#e6db74">&#39;dept_2&#39;</span>],data[<span style="color:#e6db74">&#39;dept_3&#39;</span>],data[<span style="color:#e6db74">&#39;dept_4&#39;</span>])
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;The f-statistic = </span><span style="color:#e6db74">%.2f</span><span style="color:#e6db74">, the critical value = </span><span style="color:#e6db74">%.2f</span><span style="color:#e6db74">.&#34;</span> <span style="color:#f92672">%</span> (f_statistic,critical_value))
+<span style="color:#66d9ef">if</span> f_statistic <span style="color:#f92672">&lt;</span> critical_value:
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Fail to reject the null hypothesis.&#34;</span>)
+<span style="color:#66d9ef">else</span>:
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Reject the null hypothesis.&#34;</span>)
+</code></pre></div><pre><code>The f-statistic = 0.73, the critical value = 3.49.
+Fail to reject the null hypothesis.
+</code></pre>
+<h3 id="result">Result:</h3>
+<p>The test fails to reject the null hypothesis!</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          
+          
+          processEscapes: true,
+          processEnvironments: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+          TeX: { equationNumbers: { autoNumber: "AMS" },
+          extensions: ["AMSmath.js", "AMSsymbols.js"] }
+          },
+        CommonHTML: { linebreaks: { automatic: true } },
+        "HTML-CSS": { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+      });
+    </script>
+    <script type="text/javascript" async
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://lamdoanduc.github.io/public/" >
+    &copy;  Duc-Lam Doan 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/duclam-doan/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/lamdoanduc" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+<a href="https://public.tableau.com/profile/duc.lam#!/" target="_blank" class="link-transition tableau link dib z-999 pt3 pt0-l mr1" title="Tableau link" rel="noopener" aria-label="Tableau——Opens in a new window">
+  <svg  height="32px"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.3 59.5"><path d="M28.5 40.2h3.3v-9h8.3V28h-8.3v-9h-3.3v9h-8.2v3.2h8.2z" fill="#e8762d"/><path d="M13.2 53.2H16v-8h7.4v-2.5H16v-8.1h-2.8v8.1H5.8v2.5h7.4z" fill="#c72037"/><path d="M44.3 24.3h2.8v-8h7.5v-2.4h-7.5V5.8h-2.8v8.1h-7.4v2.4h7.4z" fill="#5b879b"/><path d="M29 59.5h2.4v-5.7h5.1v-2.1h-5.1V46H29v5.7h-5v2.1h5z" fill="#5c6692"/><path d="M13.3 24.3h2.6v-8.1h7.5v-2.3h-7.5V5.8h-2.6v8.1H5.8v2.3h7.5z" fill="#eb9129"/><path d="M52.8 36.3h2.4v-5.6h5.1v-2.2h-5.1v-5.6h-2.4v5.6h-5v2.2h5z" fill="#5c6692"/><path clip-rule="evenodd" d="M44.3 53.2h2.8v-8h7.5v-2.5h-7.5v-8.1h-2.8v8.1h-7.4v2.5h7.4z" fill="#1f457e" fill-rule="evenodd"/><path d="M36.1 7.2V5.5h-5V0h-1.8v5.5h-5v1.7h5v5.5h1.8V7.2zM5 35.9h1.8v-5.5h5v-1.7h-5v-5.4H5v5.4H0v1.8l5-.1z" fill="#7199a6"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="https://lamdoanduc.github.io/public/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
