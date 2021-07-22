@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Project III: E-commerce price | Duc-Lam Doan</title>
+    <title>Project VI: The impact of marketing campaigns on the total app trial traffic. | Duc-Lam Doan</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Monsieur the Cardinal">
     <meta name="generator" content="Hugo 0.78.2" />
@@ -27,23 +27,23 @@
 
     
     
-    <meta property="og:title" content="Project III: E-commerce price" />
+    <meta property="og:title" content="Project VI: The impact of marketing campaigns on the total app trial traffic." />
 <meta property="og:description" content="Monsieur the Cardinal" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://lamdoanduc.github.io/public/portfolio/project3/" />
-<meta property="article:published_time" content="2020-12-11T11:13:32-04:00" />
-<meta property="article:modified_time" content="2020-12-11T11:13:32-04:00" />
-<meta itemprop="name" content="Project III: E-commerce price">
+<meta property="og:url" content="https://lamdoanduc.github.io/public/portfolio/project6/" />
+<meta property="article:published_time" content="2021-06-11T11:13:32-04:00" />
+<meta property="article:modified_time" content="2021-06-11T11:13:32-04:00" />
+<meta itemprop="name" content="Project VI: The impact of marketing campaigns on the total app trial traffic.">
 <meta itemprop="description" content="Monsieur the Cardinal">
-<meta itemprop="datePublished" content="2020-12-11T11:13:32-04:00" />
-<meta itemprop="dateModified" content="2020-12-11T11:13:32-04:00" />
-<meta itemprop="wordCount" content="187">
+<meta itemprop="datePublished" content="2021-06-11T11:13:32-04:00" />
+<meta itemprop="dateModified" content="2021-06-11T11:13:32-04:00" />
+<meta itemprop="wordCount" content="551">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Project III: E-commerce price"/>
+<meta name="twitter:title" content="Project VI: The impact of marketing campaigns on the total app trial traffic."/>
 <meta name="twitter:description" content="Monsieur the Cardinal"/>
 
 	
@@ -164,38 +164,76 @@
   </div>
 
 
-      <h1 class="f1 athelas mt3 mb1">Project III: E-commerce price</h1>
+      <h1 class="f1 athelas mt3 mb1">Project VI: The impact of marketing campaigns on the total app trial traffic.</h1>
       
       
-      <time class="f6 mv4 dib tracked" datetime="2020-12-11T11:13:32-04:00">December 11, 2020</time>
+      <time class="f6 mv4 dib tracked" datetime="2021-06-11T11:13:32-04:00">June 11, 2021</time>
 
       
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="goal">Goal:</h1>
-<p>The blooming of e-commerce platforms over the last 2 decades makes the market become very competitive. To dominate the market they must provide customer with goods at lower prices. This project uses the data from an e-commerce platform to predict the goods price based on given features in the data.</p>
+<p>A company has been running paid marketing on various platforms. The company wants to understand the true impact of the marketing campaigns on their total new trial traffic. This data project is aimed to:</p>
+<ul>
+<li>Analyse the data to see the number of new users and main contributing factors;</li>
+<li>Suggest for how to best allocate a marketing budget 50 000 USD over the next marketing period (28 days).</li>
+</ul>
 <h1 id="data">Data:</h1>
-<p>The data contains contains 2452 observations with 7 columns (features) and a target variable, <em>Selling_price</em>.</p>
+<p>The data from the last year includes two datasets. One contains daily data of app trials per
+day, and the other contains ad spending by day and campaign.</p>
+<h1 id="method-and-workflow">Method and workflow:</h1>
+<ul>
+<li>First, an exploratory data analysis was carried out to get insights from the data.</li>
+<li>The importance metric to see the effect of the marketing campaigns is cost per trail, e.g., an effective marketing campaign is the one with a low cost per trial. There were several marking campaigns (on different platforms and target audience) run each day in the entire period. However, with the given data it was impossible to track the traffic of new trails, i.e., where (which marketing campaign) the new trials were originated. The most (least) effective campaigns were determined by using rigorous analyses of the cost per trail by day and the correlation between the marketing spend and the number of trials.
 <figure>
-    <img src="https://lamdoanduc.github.io/public/images/project3.png"/> 
+    <img src="https://lamdoanduc.github.io/public/images/cost_per_trail.png"/> 
 </figure>
+</li>
+<li>To suggest for marketing budget allocation for the next marketing period, I used Linear Programming (optimisation) method. It is a 2-step process:
+<ul>
+<li>First, <strong>linear regression</strong>: Use a linear regression model to fit the spending amount of
+the campaigns and the cost_per_trail. The 14 variates are the spending amount of the
+14 unique campaigns.</li>
+<li>Then, <strong>Linear Programming or linear optimization</strong>: to suggest the budget
+allocation for each day in a period of 4 coming weeks. We will be minimising the cost_per_trial for each day. The constraints for the optimisation problem are:
+<ul>
+<li>Assume that the budget of 50 000 $ is equally divided into the same amount for each day in the next period.</li>
+<li>The budget allocation will depend on the number of campaigns (a variable n_campaign) we want to launch each day.</li>
+<li>For a given date, the amount allocated for each campaign depends on the data collected from the beginning to the date before. This means we need to re-run the code every day with the data accumulated to get the budget allocation for the date.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="results">Results</h1>
+<p>This is an example of today optimised budget allocation if we want to run 4 different campaigns:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Run a test to find budget allocation for today with 4 marketing campaigns</span>
+n_campaign <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>
+optimizing_budget_for_marketing_campaigns(n_campaign)
+</code></pre></div><pre><code>These are the budgets allocated to each marketing campaign:
+apple_1_A = 0.0 $
+apple_4_D = 446.42857 $
+apple_5_A = 446.42857 $
+facebook_1_A = 0.0 $
+facebook_1_D = 0.0 $
+facebook_2_C = 0.0 $
+facebook_3_A = 0.0 $
+facebook_5_A = 446.42857 $
+facebook_5_B = 0.0 $
+facebook_5_D = 0.0 $
+instagram_1_D = 0.0 $
+instagram_2_C = 446.42857 $
+instagram_5_B = 0.0 $
+instagram_5_D = 0.0 $
 
-<h1 id="method">Method:</h1>
-<p>The exploratory data analysis (EDA) showed a highly skewed distribution of the selling price. The selling price was then transformed into a logarithmic scale. I did feature engineering as following:</p>
+
+The Objective (cost per trail) = 3.6276765119602725
+</code></pre>
+<h1 id="outlook">Outlook</h1>
 <ul>
-<li>Using Date column to create: Day of Week, Month, Quarter, etc</li>
-<li>Using groupby function and statical method, for example, Rating column, number of unique items at each brand, category</li>
-<li>Encoding some features</li>
+<li>The data does not include the <strong>customer journey</strong>. The analysis would be improved with the supplemented data.</li>
+<li>The process can be constructed as a pipeline where the code connected to the accumulated data and to be scheduled to run regularly. It can be daily scheduled to get the optimised budget allocation.</li>
 </ul>
-<p>I used XGBRegressor model to predict the target. XGBoost is a decision-tree-based ensemble Machine Learning algorithm. It uses a gradient boosting framework.</p>
-<h1 id="requirement">Requirement:</h1>
-<p>The EDA and modeling were performed in Python 3 with Jupyter Notebook. The flowing is some necessary libraries, packages:</p>
-<ul>
-<li>Pandas, numpy</li>
-<li>Matplotlib, seaborn</li>
-<li>Sklearn, xgboost.</li>
-</ul>
-<h4 id="for-more-detail-please-find-the-reporthttpsgithubcomlamdoanducpredictive-analysis-projectsblobmasterpredict_ecommerce_pricereport_codeipynb-in-github">For more detail, please find <a href="https://github.com/lamdoanduc/Predictive-analysis-Projects/blob/master/Predict_eCommerce_Price/Report_Code.ipynb">The report</a> in Github.</h4>
 <ul class="pa0">
   
 </ul>

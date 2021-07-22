@@ -8,9 +8,37 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 02 Mar 2017 12:00:00 -0500</lastBuildDate><atom:link href="https://lamdoanduc.github.io/public/portfolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Project III: Predict eCommerce price</title>
+      <title>Project VI: The impact of marketing campaigns on the total app trial traffic.</title>
+      <link>https://lamdoanduc.github.io/public/portfolio/project6/</link>
+      <pubDate>Fri, 11 Jun 2021 11:13:32 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/portfolio/project6/</guid>
+      <description>Goal: A company has been running paid marketing on various platforms. The company wants to understand the true impact of the marketing campaigns on their total new trial traffic. This data project is aimed to:
+ Analyse the data to see the number of new users and main contributing factors; Suggest for how to best allocate a marketing budget 50 000 USD over the next marketing period (28 days).  Data: The data from the last year includes two datasets.</description>
+    </item>
+    
+    <item>
+      <title>Project V: A Network intrusion detector</title>
+      <link>https://lamdoanduc.github.io/public/portfolio/project5/</link>
+      <pubDate>Fri, 09 Apr 2021 10:58:08 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/portfolio/project5/</guid>
+      <description>Task:  Build a predictive model capable of distinguishing between &amp;lsquo;bad&amp;rsquo; connections, called intrusions or attacks, and &amp;lsquo;good&amp;rsquo; normal connections. Differentiate between both the normal traffic and among distinct types of attack (predict the actual types (22 types) of attack).  Data:  The dataset was acquired, by Lincoln Labs, for nine weeks of raw TCP dump data for a local-area network (LAN) simulating a typical U.S. Air Force LAN. This Link is for more information about the data.</description>
+    </item>
+    
+    <item>
+      <title>Project IV: Investigating customer behavior on Google Merchandise Store website using the Google Analytics dataset</title>
+      <link>https://lamdoanduc.github.io/public/portfolio/project4/</link>
+      <pubDate>Fri, 12 Feb 2021 11:14:48 -0400</pubDate>
+      
+      <guid>https://lamdoanduc.github.io/public/portfolio/project4/</guid>
+      <description>1. Goals: 1.1. Exploratory data analysis:  Number of views and number of unique users, Top ten products with the most views, Top top 10 selling products, Number of different eCommerceAction_type, Calculate revenue by month, How many % of the total visitors made a purchase, How many visitors bought on subsequent visits to the website?  1.2. Predictive analysis There were some customers who added products to carts but they removed the products from the carts or logged out without further processing.</description>
+    </item>
+    
+    <item>
+      <title>Project III: E-commerce price</title>
       <link>https://lamdoanduc.github.io/public/portfolio/project3/</link>
-      <pubDate>Thu, 11 Jun 2020 11:13:32 -0400</pubDate>
+      <pubDate>Fri, 11 Dec 2020 11:13:32 -0400</pubDate>
       
       <guid>https://lamdoanduc.github.io/public/portfolio/project3/</guid>
       <description>Goal: The blooming of e-commerce platforms over the last 2 decades makes the market become very competitive. To dominate the market they must provide customer with goods at lower prices. This project uses the data from an e-commerce platform to predict the goods price based on given features in the data.
@@ -21,7 +49,7 @@ Data: The data contains contains 2452 observations with 7 columns (features) and
     <item>
       <title>Project II: Anomalies in ERP reports</title>
       <link>https://lamdoanduc.github.io/public/portfolio/project2/</link>
-      <pubDate>Sun, 10 May 2020 11:00:59 -0400</pubDate>
+      <pubDate>Tue, 10 Nov 2020 11:00:59 -0400</pubDate>
       
       <guid>https://lamdoanduc.github.io/public/portfolio/project2/</guid>
       <description>Overview and Objective: The data shows the business performance of an online shop in 2018. The shop manager has noticed anomalies in their ERP reports, and she is worried about the reliability of the data. The data consists of three dataset: CustomerData, ItemData, and TransactionData. The case-study goals are:
@@ -32,29 +60,11 @@ Data: The data contains contains 2452 observations with 7 columns (features) and
     <item>
       <title>Project I: Loan status prediction</title>
       <link>https://lamdoanduc.github.io/public/portfolio/project1/</link>
-      <pubDate>Thu, 09 Apr 2020 10:58:08 -0400</pubDate>
+      <pubDate>Wed, 09 Sep 2020 10:58:08 -0400</pubDate>
       
       <guid>https://lamdoanduc.github.io/public/portfolio/project1/</guid>
       <description>Goal: A model can predict wether or not a borrower will pay back his/her loan. The model is trained with a given historical data that has information on whether or not the borrowers defaulted. The model can be used in the future to assess if a new customer is likely to pay back the loan.
 Method: A deep neural network is used to address the problem. Since the data is imbalanced, it will be resampled (both under-sampled and over-sampled) to get better results of prediction.</description>
-    </item>
-    
-    <item>
-      <title>Project V: A Network intrusion detector</title>
-      <link>https://lamdoanduc.github.io/public/portfolio/project5/</link>
-      <pubDate>Thu, 09 Apr 2020 10:58:08 -0400</pubDate>
-      
-      <guid>https://lamdoanduc.github.io/public/portfolio/project5/</guid>
-      <description>Task:  Build a predictive model capable of distinguishing between &amp;lsquo;bad&amp;rsquo; connections, called intrusions or attacks, and &amp;lsquo;good&amp;rsquo; normal connections. Differentiate between both the normal traffic and among distinct types of attack (predict the actual types (22 types) of attack).  Data:  The dataset was acquired, by Lincoln Labs, for nine weeks of raw TCP dump data for a local-area network (LAN) simulating a typical U.S. Air Force LAN. This Link is for more information about the data.</description>
-    </item>
-    
-    <item>
-      <title>Project IV: Investigating customer behavior on Google Merchandise Store website using the Google Analytics dataset</title>
-      <link>https://lamdoanduc.github.io/public/portfolio/project4/</link>
-      <pubDate>Wed, 12 Feb 2020 11:14:48 -0400</pubDate>
-      
-      <guid>https://lamdoanduc.github.io/public/portfolio/project4/</guid>
-      <description>1. Goals: 1.1. Exploratory data analysis:  Number of views and number of unique users, Top ten products with the most views, Top top 10 selling products, Number of different eCommerceAction_type, Calculate revenue by month, How many % of the total visitors made a purchase, How many visitors bought on subsequent visits to the website?  1.2. Predictive analysis There were some customers who added products to carts but they removed the products from the carts or logged out without further processing.</description>
     </item>
     
   </channel>
