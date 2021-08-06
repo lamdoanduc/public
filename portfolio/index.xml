@@ -8,13 +8,13 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 02 Mar 2017 12:00:00 -0500</lastBuildDate><atom:link href="https://lamdoanduc.github.io/public/portfolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>A Word embedding model for drugs and adverse drug reactions to support the work of negative-effect detections</title>
+      <title>A Word-embedding model for drugs and adverse drug reactions to support the work of negative-effect detections</title>
       <link>https://lamdoanduc.github.io/public/portfolio/project7/</link>
       <pubDate>Wed, 04 Aug 2021 11:13:32 -0400</pubDate>
       
       <guid>https://lamdoanduc.github.io/public/portfolio/project7/</guid>
       <description>This is a project that I got involved at Uppsala Monitoring Centre (UMC - Link). Lucie G. has developed a word2vec (a natural language processing technique) model to build joint vector representations for drugs and adverse drug reactions (negative, side effects caused by drugs during treatment). Her work has been published (link) and used in signal (as known as potential side effects) detection at UMC.
-My contribution to project was that I applied Lucie’s model to carry out different experiments on the up-to-date WHO database of individual case safety reports.</description>
+My contribution to the project was that I applied Lucie’s model to carry out different experiments on the up-to-date WHO database of individual case safety reports.</description>
     </item>
     
     <item>
