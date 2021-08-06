@@ -13,8 +13,7 @@
       <pubDate>Wed, 04 Aug 2021 11:13:32 -0400</pubDate>
       
       <guid>https://lamdoanduc.github.io/public/portfolio/project7/</guid>
-      <description>This is a project that I got involved at Uppsala Monitoring Centre (UMC - Link). Lucie G. has developed a word2vec (a natural language processing technique) model to build joint vector representations for drugs and adverse drug reactions (negative, side effects caused by drugs during treatment). Her work has been published (link) and used in signal (as known as potential side effects) detection at UMC.
-My contribution to the project was that I applied Lucie’s model to carry out different experiments on the up-to-date WHO database of individual case safety reports.</description>
+      <description>This is a project that I got involved at Uppsala Monitoring Centre (UMC - Link). UMC is a WHO-collaborating centre for drug safety and scientific research. Lucie G. has developed a word2vec (a natural language processing technique) model to build joint vector representations for drugs and adverse drug reactions (negative, side effects caused by drugs during treatment). Her work has been published (link) and used in signal (as known as potential side effects) detection at UMC.</description>
     </item>
     
     <item>
